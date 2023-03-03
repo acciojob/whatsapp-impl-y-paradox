@@ -50,7 +50,7 @@ public class WhatsappRepository {
             group.setNumberOfParticipants((2));
         }
         else{
-            String groupName = "Group"+noOfGroup;
+            String groupName = "Group "+ noOfGroup;
             group.setName(groupName);
             group.setNumberOfParticipants(users.size());
             noOfGroup++;
