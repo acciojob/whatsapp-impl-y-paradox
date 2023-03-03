@@ -19,14 +19,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("whatsapp")
 public class WhatsappController {
 
-    //Autowire will not work in this case, no need to change this and add autowire
+    // Autowire will not work in this case, no need to change this and add autowire
     WhatsappService whatsappService = new WhatsappService();
 
     @PostMapping("/add-user")
     public String createUser(String name, String mobile) throws Exception {
         //If the mobile number exists in database, throw "User already exists" exception
         //Otherwise, create the user and return "SUCCESS"
-
         return whatsappService.createUser(name, mobile);
     }
 
@@ -84,8 +83,8 @@ public class WhatsappController {
 
     @GetMapping("/find-messages")
     public String findMessage(Date start, Date end, int K) throws Exception{
-        //This is a bonus problem and does not contains any marks
-        // Find the Kth latest message between start and end (excluding start and end)
+        //This is a bonus problem and does not contain any marks
+        // Find the Kth Latest message between start and end (excluding start and end)
         // If the number of messages between given time is less than K, throw "K is greater than the number of messages" exception
 
         return whatsappService.findMessage(start, end, K);
